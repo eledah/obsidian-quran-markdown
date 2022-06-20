@@ -1,0 +1,88 @@
+/* heading styling */
+h5 {
+    position: relative;
+    right: -5%;
+    top: 59px;
+    line-height: 0px;
+    margin-top: -20px;
+    margin-right: 3px;
+    font-weight: 500;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Sahel FD' !important;
+    color: var(--text-faint) !important;
+}
+
+/* ayah styling */
+.ayah {
+    font-family: "Amiri";
+    font-size: 22px !important;
+    line-height: 2.5em;
+}
+
+/* start of code for tooltips */
+.hovertext {
+    cursor: help;
+    position: relative;
+}
+
+/* common styles for both parts of tool tip */
+.hovertext::before,
+.hovertext::after {
+    right: 40%;
+    opacity: 0;
+    position: absolute;
+    z-index: -1000;
+    font-family: 'Sahel FD';
+    font-size: 16px;
+    line-height: 25px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.hovertext:hover::before,
+.hovertext:focus::before,
+.hovertext:hover::after,
+.hovertext:focus::after {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    z-index: 1000; 
+}
+
+/* speech bubble */
+.hovertext::after {
+    background: #404040;
+    border-radius: 1.25em;
+    bottom: 110%;
+    color: #EDEFF0;
+    content: attr(data-hover);
+    margin-left: -8.75em;
+    padding: 1em;
+    transition: all .05s cubic-bezier(.84,-0.18,.31,1.26) .2s;
+    transform:  scale(.6) translateY(50%);  
+    width: 20.5em;
+}
+
+.hovertext:hover::after,
+.hovertext:focus::after  {
+    transition: all .25s cubic-bezier(.84,-0.18,.31,1.26);
+}
+
+@media (max-width: 760px) {
+  .hovertext::after { 
+        font-size: .75em;
+        margin-left: -5em;
+        width: 10em; 
+  }
+}
+
+
+div.markdown-embed-content.markdown-embed-heading > div > div > div.el-p > p > span::after {
+    position: absolute !important;
+    margin: unset !important;
+    bottom: 5% !important;
+    right: 0% !important;
+    width: fit-content !important;
+    padding: 0.5em;
+    text-align: center;
+}
+
